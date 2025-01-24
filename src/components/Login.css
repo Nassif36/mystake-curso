@@ -1,0 +1,60 @@
+.login-container,
+.registro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Altura completa de la ventana */
+
+  max-width: 35vw;
+  margin: 0 auto;
+}
+
+.login-form,
+.registro-form {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h1,
+.registro-form h1 {
+  font-family: Arial, sans-serif;
+  color: #000000; /* Color del título */
+}
+
+.login-form label,
+.registro-form {
+  font-family: Arial, sans-serif;
+  color: #000000; /* Color del texto */
+}
+
+.login-form input,
+.registro-form input {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+.contenedor-btn {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.login-form button,
+.registro-form button {
+  background-color: #000000; /* Color del botón */
+  color: #ffffff; /* Color del texto del botón */
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.cursos-container {
+  max-width: 80vw;
+  margin: 0 auto;
+}

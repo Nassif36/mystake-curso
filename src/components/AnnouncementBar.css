@@ -1,0 +1,128 @@
+
+.announcement-bar {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+  padding: 1em;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+  position: relative;
+  box-shadow: 3px 3px 3px #0000002e;
+}
+
+.announcement-bar p {
+  margin: 0 0 0 auto;
+  color: var(--color-text);
+}
+
+.cta-button {
+  font-size: 16px;
+  margin-left: 0;
+  margin-right: auto;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Altura para centrar verticalmente */
+}
+
+/* Ajustes para el botón de toggle */
+.toggle-button {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 60px; /* Ancho reducido */
+  height: 30px; /* Altura reducida */
+  background-color: #1d262a;
+  border-radius: 20px; /* Radio ajustado para el tamaño del botón */
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.4s;
+  position: absolute;
+  right: 1em;
+}
+
+.toggle-button:before {
+  content: "";
+  position: absolute;
+  height: 30px; /* Altura ajustada */
+  width: 30px; /* Ancho ajustado */
+  border-radius: 50%; /* Mantenerlo redondo */
+  top: 0;
+  left: 0;
+  background-color: var(--toggle-circle-bg);
+  transition: transform 0.4s;
+  border: 3px solid #1d262a;
+}
+
+.toggle-button:checked:before {
+  transform: translateX(100%);
+
+}
+
+.progress-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+
+.progress-circle text {
+  fill: var(--color-text);
+  font-weight: bold;
+}
+
+
+.announcement-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  z-index: 10;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.announcement-bar.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.progress-wrapper {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  stroke: rgb(4, 200, 33);
+}
+
+
+.progress-circle text {
+  color: rgb(4, 200, 33);
+  fill: rgb(4, 200, 33);
+  padding: .3em;
+  font-weight: bold;
+}
+
+.toggle-button {
+  margin-left: 10px;
+}

@@ -1,0 +1,22 @@
+/* src/components/LoadingSpinner.css */
+.loading-spinner {
+  position: fixed; /* Posiciona el spinner en el centro de la pantalla */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el spinner */
+  z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.spinner {
+  border: 16px solid rgba(15, 62, 133, 0.311); /* Color primario con opacidad */
+  border-top: 16px solid #0f3e85; /* Color primario sólido para la parte superior */
+  border-radius: 50%; /* Hace que el spinner sea circular */
+  width: 60px; /* Ancho del spinner */
+  height: 60px; /* Altura del spinner */
+  animation: spin 1s linear infinite; /* Animación de rotación */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

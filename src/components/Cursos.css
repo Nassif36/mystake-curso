@@ -1,0 +1,38 @@
+
+
+.cursos-container {
+  padding: 2em 0 4em 0;
+}
+.cursos-container h2 {
+  padding: 1em 0;
+}
+
+.cursos-titulo {
+  border-bottom: 1px outset #f3f3f352;
+  padding: .5em;
+
+}
+
+.cursos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.curso-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  box-shadow: 9px 11px 12px #00000022;
+  padding: 1em 1.5em;
+}
+.curso-item > div {
+  display: flex;
+  flex-direction: column;
+  max-width: 55ch;
+}
+.curso-item img {
+  width: 100%;
+  max-width: 250px;
+  max-height: 250px;
+}
