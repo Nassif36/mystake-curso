@@ -8,6 +8,7 @@ import "./Curso.css";
 const Curso = () => {
   const { cursoId } = useParams();
   const [cursoArchivos, setCursoArchivos] = useState([]);
+  const [progreso, setProgreso] = useState(0);
   const [archivoSeleccionado, setArchivoSeleccionado] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -20,9 +21,12 @@ const Curso = () => {
         const cursoRef = ref(storage, `cursos/${cursoId}`);
         const listaCarpetas = await listAll(cursoRef);
         const titulosCarpetas = {
-          "1": "1 Introducción",
-          "2": "2 Desarrollo",
-          "3": "3 Conclusión",
+          "1": "1 Cómo me registro?",
+          "2": "2 Como utilizo el dashboard?",
+          "3": "3 Marca Personal",
+          "4": "4 Redes Sociales",
+          "5": "5 Creación de contenido",
+          "6": "6 Marketing"
         };
         const carpetasConArchivos = await Promise.all(
           listaCarpetas.prefixes.map(async (subcarpeta) => {
@@ -67,6 +71,14 @@ const Curso = () => {
     fetchCurso();
   }, [cursoId]);
 
+  useEffect(() => {
+    if (cursoArchivos.length > 0) {
+      const totalArchivos = cursoArchivos.reduce((sum, carpeta) => sum + carpeta.archivos.length, 0);
+      const archivoIndex = cursoArchivos.flatMap(carpeta => carpeta.archivos).indexOf(archivoSeleccionado);
+      setProgreso(((archivoIndex + 1) / totalArchivos) * 100);
+    }
+  }, [archivoSeleccionado, cursoArchivos]);
+
   const handleSeleccionArchivo = (archivo) => {
     setArchivoSeleccionado(archivo);
   };
@@ -86,7 +98,15 @@ const Curso = () => {
         <button className="back-button secondary" onClick={handleNavigate}>
           ← Cursos
         </button>
-        
+        <div className="sidebar-progress">
+          <div className="progress-bar">
+            <div
+              className="progress-indicator"
+              style={{ width: `${progreso}%` }}
+            ></div>
+          </div>
+          <p>Progreso: {Math.round(progreso)}%</p>
+        </div>
         <ul className="sidebar-list">
           {cursoArchivos.map((carpeta, carpetaIndex) => (
             <li key={carpetaIndex} className="sidebar-folder">
@@ -110,7 +130,7 @@ const Curso = () => {
       <main className="curso-content">
         {archivoSeleccionado && (
           <div className="curso-section">
-            <h3 className="folder-title">{archivoSeleccionado.titulo}</h3>
+            <h3 className="file-title">{archivoSeleccionado.titulo}</h3>
             <div className="curso-media">
               {archivoSeleccionado.tipo === "imagen" && (
                 <img src={archivoSeleccionado.url} alt={archivoSeleccionado.titulo} />

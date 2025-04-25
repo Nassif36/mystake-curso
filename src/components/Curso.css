@@ -11,6 +11,7 @@
   left: 0;
   bottom: 0;
   top: 0;
+  overflow-y: scroll;
 }
 
 .sidebar-progress {
@@ -36,6 +37,10 @@
 }
 .sidebar-folder {
   padding: .5rem 0;
+}
+
+.folder-title {
+  white-space: nowrap;
 }
 
 .sidebar-item {
